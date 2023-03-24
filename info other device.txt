@@ -1,0 +1,15 @@
+ducminh123xyz@gmail.com
+abcd1234@
+
+
+u2g6-qshy-tb8c-prkq-06wa
+
+rtmp://a.rtmp.youtube.com/live2
+
+
+anaconda setup
+# tạo môi trường
+conda create -n nameEnvironment python=3.8.12
+Ex: conda create -n deep_learning python=3.8.12
+
+
