@@ -1,3 +1,7 @@
 # Ignore kagglecatsanddogs_5340 folder and zip file
 deep learning/input/cat-and-dog/
 deep learning/archive.zip
+
+# file train & test
+deep learning/better_than_version/input/dogs-vs-cats/test1.zip
+deep learning/better_than_version/input/dogs-vs-cats/train.zip
