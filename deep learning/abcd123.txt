@@ -1,0 +1,7 @@
+# in ra thông tin về mô hình
+mse = mean_squared_error(model.predict(X), y)
+print('Tổng số phương sai số trên tập mẫu: ', mse)
+print('Hệ số hồi quy: ', model.coef_)
+print('Sai số: ', model.intercept_)
+print(
+    f'Công thức: [Cân nặng] = {model.coef_} x [Chiều cao] + {model.intercept_}')
