@@ -1,0 +1,4 @@
+https://www.kaggle.com/code/hminhckhmtk18k/photo-to-monet-cyclegan-pytorch-lightning/edit
+
+
+DATASET: https://www.kaggle.com/competitions/gan-getting-started/data
