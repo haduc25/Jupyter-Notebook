@@ -2,6 +2,9 @@ npx create-react-app my-app
 cd my-app
 npm start
 
+### new ###
+rafec => create like ffc but detail and better than
+
 
 ## usage ##
 cd myself
