@@ -16,7 +16,7 @@ const Social = () => {
             </a>
 
             <a href="https://www.facebook.com/haduc.25.09/" className="home__social-icon" target="_blank">
-                <i class="uil uil-facebook-f"></i>
+                <i className="uil uil-facebook-f"></i>
             </a>
         </div>
     );
