@@ -1,0 +1,8 @@
+npm install --global yarn # install yarn
+
+yarn --version # check version
+
+yarn install # like npm i
+
+yarn start 
+
