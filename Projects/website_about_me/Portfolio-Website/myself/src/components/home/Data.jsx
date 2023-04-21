@@ -4,7 +4,7 @@ const Data = () => {
     return (
         <div className="home__data">
             <h1 className="home__title">
-                Hà Minh Đức
+                Minh Đức
                 {/* from 'src/assets/hand.svg' */}
                 <svg
                     width="36"
