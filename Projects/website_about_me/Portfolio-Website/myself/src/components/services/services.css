@@ -55,8 +55,8 @@
     justify-content: center;
     align-items: center;
     padding: 0 1rem;
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
     transition: 0.3s;
 }
 
@@ -111,4 +111,10 @@
 
 .services__modal-info {
     font-size: var(--small-font-size);
+}
+
+/* Active Modal */
+.active-modal {
+    opacity: 1;
+    visibility: visible;
 }
