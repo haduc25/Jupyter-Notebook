@@ -34,6 +34,8 @@
 .skills__data {
     display: flex;
     column-gap: 0.5rem;
+    /* để tách cái skills__name vs skills__level ra xa 1 chút */
+    margin-bottom: 0.6rem;
 }
 
 .skills .bx-badge-check {
@@ -49,4 +51,35 @@
 
 .skills__level {
     font-size: var(--tiny-font-size);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 992px) {
+    .skills__container {
+        grid-template-columns: max-content;
+        row-gap: 2rem;
+    }
+}
+
+/* For medium devices */
+@media screen and (max-width: 576px) {
+    .skills__container {
+        grid-template-columns: 1fr;
+    }
+
+    .skills__content {
+        padding: 1.5rem;
+    }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+    .skills__box {
+        column-gap: 1.25rem;
+    }
+
+    .skill__name {
+        font-size: var(--small-font-size);
+    }
 }
