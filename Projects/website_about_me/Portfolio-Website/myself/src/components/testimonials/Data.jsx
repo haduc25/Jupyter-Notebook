@@ -21,4 +21,10 @@ export const Data = [
         title: 'Sara Cill',
         description: 'A really good job, all aspects of the project were followed step by step and with good results.',
     },
+    {
+        id: 4,
+        image: Image2,
+        title: 'Harry Clinton',
+        description: 'A really good job, all aspects of the project were followed step by step and with good results.',
+    },
 ];
