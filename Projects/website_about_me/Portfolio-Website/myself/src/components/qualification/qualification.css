@@ -27,11 +27,11 @@
 
 .qualification__active {
     color: var(--title-color-dark);
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .qualification__sections {
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     display: grid;
     grid-template-columns: 0.5fr;
     justify-content: center;
@@ -46,7 +46,7 @@
 }
 
 .qualification__data {
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     display: grid;
     grid-template-columns: 1fr max-content 1fr; /* làm cột dữ liệu sole nhau */
     /* 
