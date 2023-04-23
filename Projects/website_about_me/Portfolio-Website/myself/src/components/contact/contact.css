@@ -1,5 +1,5 @@
 .contact__container {
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     grid-template-columns: repeat(2, max-content);
     justify-content: center;
     column-gap: 6rem;
@@ -139,7 +139,7 @@
     }
 
     .contact__form {
-        width: 100%; 
+        width: 100%;
     }
 }
 
