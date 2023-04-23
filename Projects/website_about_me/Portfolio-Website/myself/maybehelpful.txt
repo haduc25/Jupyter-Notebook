@@ -12,3 +12,6 @@ https://swiperjs.com/ # slider
 
 emailjs
 - https://www.emailjs.com/
+
+# install
+ npm install @emailjs/browser --save

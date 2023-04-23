@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 import './contact.css';
 
 const Contact = () => {
+    // ################## START: EMAILJS ################## //
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_gydpclk', 'template_3mjztpt', form.current, '1rGYGFp3nkM6bwOk2').then(
+            (result) => {
+                console.log(result.text);
+            },
+            (error) => {
+                console.log(error.text);
+            },
+        );
+
+        // upgrade auto reset form
+        e.target.reset();
+    };
+
+    // ################## END: EMAILJS ################## //
+
     return (
         <section className="contact section" id="contact">
             <h2 className="section__title">Get in touch</h2>
@@ -53,7 +76,7 @@ const Contact = () => {
                 <div className="contact__content">
                     <h3 className="contact__title">Write me your project</h3>
 
-                    <form className="contact__form">
+                    <form className="contact__form" ref={form} onSubmit={sendEmail}>
                         <div className="contact__form-div">
                             <label htmlFor="" className="contact__form-tag">
                                 Name
