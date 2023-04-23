@@ -1,4 +1,5 @@
 import React from 'react';
+import './contact.css';
 
 const Contact = () => {
     return (
@@ -12,10 +13,10 @@ const Contact = () => {
 
                     <div className="contact__info">
                         <div className="contact__card">
-                            <i className="bx bx-mail-send contact__card-i"></i>
+                            <i className="bx bx-mail-send contact__card-icon"></i>
 
                             <h3 className="contact__card-title">Email</h3>
-                            <span className="contact__card">haducvcvb@gmail.com</span>
+                            <span className="contact__card-data">haducvcvb@gmail.com</span>
 
                             <a href="mailto:haducvcvb@gmail.com.com" className="contact__button">
                                 Write me <i className="bx bx-right-arrow-alt contact__button-icon"></i>
@@ -23,10 +24,10 @@ const Contact = () => {
                         </div>
 
                         <div className="contact__card">
-                            <i className="bx bxl-whatsapp contact__card-i"></i>
+                            <i className="bx bxl-whatsapp contact__card-icon"></i>
 
                             <h3 className="contact__card-title">Whatsapp</h3>
-                            <span className="contact__card">222-555-999</span>
+                            <span className="contact__card-data">222-555-999</span>
 
                             <a
                                 href="https://api.whatsapp.com/send?phone=62214408789&text=Hello, more information!"
@@ -37,10 +38,10 @@ const Contact = () => {
                         </div>
 
                         <div className="contact__card">
-                            <i className="bx bxl-messenger contact__card-i"></i>
+                            <i className="bx bxl-messenger contact__card-icon"></i>
 
                             <h3 className="contact__card-title">Messenger</h3>
-                            <span className="contact__card">haduc.25.09</span>
+                            <span className="contact__card-data">haduc.25.09</span>
 
                             <a href="https://m.me/haduc.25.09" className="contact__button">
                                 Write me <i className="bx bx-right-arrow-alt contact__button-icon"></i>
@@ -77,7 +78,7 @@ const Contact = () => {
                             />
                         </div>
 
-                        <div className="contact__form-div">
+                        <div className="contact__form-div contact__form-area">
                             <label htmlFor="" className="contact__form-tag">
                                 Project
                             </label>
