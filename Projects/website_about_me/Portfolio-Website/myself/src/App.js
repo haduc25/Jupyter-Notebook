@@ -16,7 +16,7 @@ function App() {
         <>
             <Header />
 
-            <main className="main" style={{ paddingBottom: '500px' }}>
+            <main className="main">
                 <Home />
                 <About />
                 <Skills />
