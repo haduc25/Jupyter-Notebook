@@ -25,6 +25,30 @@ const Contact = () => {
 
     // ################## END: EMAILJS ################## //
 
+    // ################## START: VALIDATOR ################## //
+    function validateForm() {
+        const name = document.querySelector('input[name="name"]');
+        const email = document.querySelector('input[name="email"]');
+        const project = document.querySelector('textarea[name="project"]');
+
+        if (!name.value || !email.value || !project.value) {
+            console.error('Please fill out all fields.');
+            alert('Please fill out all fields, Please try agian!');
+            return false;
+        }
+
+        if (!/\S+@\S+\.\S+/.test(email.value)) {
+            console.error('Please enter a valid email address.');
+            return false;
+        }
+
+        // Add more validation rules for the other fields here
+
+        console.log('Success!');
+        return true;
+    }
+    // ################## END: VALIDATOR ################## //
+
     return (
         <section className="contact section" id="contact">
             <h2 className="section__title">Get in touch</h2>
@@ -76,7 +100,15 @@ const Contact = () => {
                 <div className="contact__content">
                     <h3 className="contact__title">Write me your project</h3>
 
-                    <form className="contact__form" ref={form} onSubmit={sendEmail}>
+                    <form
+                        className="contact__form"
+                        ref={form}
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            // if (validateForm()) sendEmail(e);
+                            if (validateForm()) alert('Meow meow its done');
+                        }}
+                    >
                         <div className="contact__form-div">
                             <label htmlFor="" className="contact__form-tag">
                                 Name

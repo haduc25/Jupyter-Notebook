@@ -15,3 +15,8 @@ emailjs
 
 # install
  npm install @emailjs/browser --save
+
+ ## Toast message => need install in future...
+ npm i react-toastify
+
+ docs: https://www.npmjs.com/package/react-toastify
