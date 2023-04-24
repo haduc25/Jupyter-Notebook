@@ -13,7 +13,7 @@ const Works = () => {
             console.log('projectsData: ', projectsData);
             setProjects(projectsData);
         } else {
-            const newProjects = projectsData.filter((project) => project.category === item.name);
+            const newProjects = projectsData.filter((project) => project.category.toLowerCase() === item.name);
             console.log('newProjects: ', newProjects);
             setProjects(newProjects);
         }
@@ -21,15 +21,23 @@ const Works = () => {
 
     // handle when clicked
     const handleClick = (e, index) => {
-        console.log(e.target.textContent, index);
+        // set Item
+        console.log(e.target.textContent.toLowerCase(), index);
         setItem({ name: e.target.textContent });
+
+        // set Active
+        setActive(index);
     };
 
     return (
         <div>
             <div className="work__filters">
                 {projectsNav.map((item, index) => (
-                    <span className="work__item" key={index} onClick={(e) => handleClick(e, index)}>
+                    <span
+                        className={`${active === index ? 'active-work' : ''} work__item`}
+                        key={index}
+                        onClick={(e) => handleClick(e, index)}
+                    >
                         {item.name}
                     </span>
                 ))}
