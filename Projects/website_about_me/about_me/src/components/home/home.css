@@ -93,6 +93,7 @@
     infinite: sẽ kích hoạt hoạt ảnh vô hạn lần, nghĩa là nó sẽ tiếp tục chạy sau khi kết thúc.
     1s: thời gian trễ giữa mỗi lần chạy hoạt ảnh sau khi kết thúc. Ở đây là 1 giây.
     */
+    cursor: pointer;
 }
 
 @keyframes profile__animate {

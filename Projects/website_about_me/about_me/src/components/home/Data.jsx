@@ -1,10 +1,26 @@
 import React from 'react';
 
 const Data = () => {
+    const handleWhenNameTooLong = (str) => {
+        if (str.length > 10) {
+            // const  firstWord = str.split(' ')[0];
+            // return firstWord;
+
+            const secondWord = str.split(' ')[1]; // 'Đức'
+            return secondWord;
+        } else {
+            return str;
+        }
+        // else {
+        //     // String is too short, handle this case as desired
+        // }
+    };
+
     return (
         <div className="home__data">
             <h1 className="home__title">
-                Minh Đức
+                {/* Minh Đứccc */}
+                {handleWhenNameTooLong('Minh Đức')}
                 {/* from 'src/assets/hand.svg' */}
                 <svg
                     width="36"
