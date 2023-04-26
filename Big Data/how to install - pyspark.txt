@@ -2,7 +2,8 @@ https://www.oracle.com/java/technologies/downloads/#jdk20-windows (download)
 
 tutorial: 
 https://youtu.be/XvbEADU0IPU
-https://youtu.be/cxdDL_EsByQ
+https://youtu.be/cxdDL_EsByQ (https://anaconda.org/conda-forge/findspark - conda install -c conda-forge findspark)
+
 
 
 
