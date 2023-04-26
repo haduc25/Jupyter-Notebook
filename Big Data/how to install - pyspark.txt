@@ -1,0 +1,23 @@
+https://www.oracle.com/java/technologies/downloads/#jdk20-windows (download)
+
+tutorial: 
+https://youtu.be/XvbEADU0IPU
+https://youtu.be/cxdDL_EsByQ
+
+
+
+Here are the steps to install Apache Spark on Anaconda and use it in Jupyter Notebook:
+
+Install Java: Apache Spark requires Java 8 or later. You can check if Java is already installed on your system by typing java -version in the command prompt. If Java is not installed, you can download and install it from the official website: https://www.oracle.com/java/technologies/javase-downloads.html.
+
+Install Anaconda: If you haven't already, download and install Anaconda from the official website: https://www.anaconda.com/products/individual.
+
+Create a new environment: Open Anaconda Navigator and create a new environment by clicking on the "Create" button. Give the environment a name and select the Python version you want to use.
+
+Install PySpark: Once the environment is created, open the terminal (or command prompt) and activate the environment by typing conda activate env_name (replace env_name with the name of your environment). Then, install PySpark by typing conda install pyspark.
+
+Launch Jupyter Notebook: In the same terminal window, type jupyter notebook to launch Jupyter Notebook in your web browser.
+
+Create a new notebook: In Jupyter Notebook, click on the "New" button and select "Python 3" to create a new notebook.
+
+Import PySpark: In the first cell of the notebook, type the following code to import PySpark:
