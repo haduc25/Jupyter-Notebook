@@ -19,7 +19,7 @@ function App() {
             <Header />
             <main className="main">
                 <Home />
-                <DarkMode />
+                {/* <DarkMode /> */}
                 <About />
                 <Skills />
                 <Services />

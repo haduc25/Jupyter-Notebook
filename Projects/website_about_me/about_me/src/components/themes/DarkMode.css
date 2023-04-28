@@ -10,13 +10,12 @@
     display: block;
     background: #ebebeb;
     border-radius: 200px;
-    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
-        inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
     cursor: pointer;
     transition: 0.3s;
 }
 .dark_mode_label:after {
-    content: "";
+    content: '';
     width: 25px;
     height: 25px;
     position: absolute;
@@ -65,4 +64,40 @@
 }
 .dark_mode_input:checked + .dark_mode_label svg.moon {
     fill: #fff;
+}
+
+/* Light text Neon + Dark Mode*/
+.dark_mode_text-neon {
+    text-align: center;
+    color: #000;
+    animation: glowForLight 1s ease-in-out infinite alternate;
+}
+
+[data-theme='dark'] .dark_mode_text-neon {
+    text-align: center;
+    color: #fff;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6,
+            0 0 35px #0073e6;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6, 0 0 50px #0073e6,
+            0 0 60px #0073e6, 0 0 70px #0073e6;
+    }
+}
+
+@keyframes glowForLight {
+    from {
+        text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073,
+            0 0 60px #e60073, 0 0 70px #e60073;
+    }
+
+    to {
+        text-shadow: 0 0 20px #000, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6,
+            0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
 }
