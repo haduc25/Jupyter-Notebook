@@ -19,7 +19,7 @@ const Data = () => {
     return (
         <div className="home__data">
             <h1 className="home__title">
-                {/* Minh Đứccc */}
+                {/* Minh Đứcc */}
                 {handleWhenNameTooLong('Minh Đức')}
                 {/* from 'src/assets/hand.svg' */}
                 <svg
