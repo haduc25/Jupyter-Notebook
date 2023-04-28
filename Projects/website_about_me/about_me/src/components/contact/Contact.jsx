@@ -108,6 +108,7 @@ const Contact = () => {
                             // if (validateForm()) sendEmail(e);
                             if (validateForm()) alert('Meow meow its done');
                         }}
+                        autoComplete="off"
                     >
                         <div className="contact__form-div">
                             <label htmlFor="" className="contact__form-tag">

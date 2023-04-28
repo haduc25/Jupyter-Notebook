@@ -50,6 +50,17 @@
     --z-modal: 1000;
 }
 
+/* START: Dark Mode */
+[data-theme='dark'] {
+    --container-color: #282c34;
+    /* --body-color: #fff; */
+    --body-color: #282c34;
+    --text-color: #fff;
+    --title-color: #00fff2;
+    --title-color-dark: yellow;
+}
+/* END: Dark Mode */
+
 /* Responsive typography */
 @media screen and (max-width: 992px) {
     :root {

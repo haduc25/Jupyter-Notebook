@@ -11,14 +11,15 @@ import Testimonials from './components/testimonials/Testimonials';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import ScrollUp from './components/scrollup/ScrollUp';
+import DarkMode from './components/themes/DarkMode';
 
 function App() {
     return (
         <>
             <Header />
-
             <main className="main">
                 <Home />
+                <DarkMode />
                 <About />
                 <Skills />
                 <Services />
