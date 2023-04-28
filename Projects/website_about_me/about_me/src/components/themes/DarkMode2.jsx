@@ -1,27 +1,35 @@
-import React, { useState } from 'react';
-import { ReactComponent as Sun } from '../../assets/DarkMode/Sun.svg';
-import { ReactComponent as Moon } from '../../assets/DarkMode/Moon.svg';
+import React, { useState, useEffect } from 'react';
 import './DarkMode.css';
 
 const DarkMode2 = ({ props }) => {
-    // console.log('props: ', props);
     const { navLink, navIcon } = props;
 
     const [isLight, setIsLight] = useState(true);
-    const [isSunIcon, SetIsSunIcon] = useState('moon');
+    const [isSunIcon, setIsSunIcon] = useState('moon');
+
+    useEffect(() => {
+        // check local storage for saved theme
+        const savedTheme = localStorage.getItem('theme');
+
+        // set initial theme based on saved theme, or default to light mode
+        if (savedTheme === 'dark') {
+            setIsLight(false);
+            setDarkMode();
+            setIsSunIcon('sun');
+        }
+    }, []);
 
     const setDarkThemes = (status) => {
-        console.log('status: ', status);
-        // alert(isLight, status);
-        if (isLight) {
-            setDarkMode();
-            SetIsSunIcon('sun');
-        } else {
+        if (status) {
             setLightMode();
-            SetIsSunIcon('moon');
+            setIsSunIcon('moon');
+        } else {
+            setDarkMode();
+            setIsSunIcon('sun');
         }
 
         setIsLight(status);
+        localStorage.setItem('theme', status ? 'light' : 'dark');
     };
 
     const setDarkMode = () => {
@@ -30,12 +38,6 @@ const DarkMode2 = ({ props }) => {
 
     const setLightMode = () => {
         document.querySelector('body').setAttribute('data-theme', 'light');
-    };
-
-    // handle when toggle
-    const toggleThemes = (e) => {
-        if (e.target.checked) setDarkMode();
-        else setLightMode();
     };
 
     return (
