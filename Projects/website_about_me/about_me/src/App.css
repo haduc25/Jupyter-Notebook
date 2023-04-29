@@ -48,6 +48,9 @@
     --z-tooltip: 10;
     --z-fixed: 100;
     --z-modal: 1000;
+
+    /*========== for dark mode ==========*/
+    --border-color: rgba(0, 0, 0, 0.1);
 }
 
 /* START: Dark Mode */
@@ -58,6 +61,10 @@
     --text-color: #fff;
     --title-color: #00fff2;
     --title-color-dark: yellow;
+
+    /* border-color */
+    /*Steel Blue*/
+    --border-color: rgba(38, 139, 210, 0.3);
 }
 /* END: Dark Mode */
 
