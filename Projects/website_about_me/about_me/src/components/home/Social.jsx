@@ -3,20 +3,20 @@ import React from 'react';
 const Social = () => {
     return (
         <div className="home__social">
-            <a href="https://www.instagram.com/haduc.25/" className="home__social-icon" target="_blank">
-                <i className="uil uil-instagram"></i>
-            </a>
-
-            <a href="https://dribbble.com/" className="home__social-icon" target="_blank">
-                <i className="uil uil-dribbble"></i>
+            <a href="https://www.facebook.com/haduc.25.09/" className="home__social-icon" target="_blank">
+                <i className="uil uil-facebook-f"></i>
             </a>
 
             <a href="https://github.com/haduc25" className="home__social-icon" target="_blank">
                 <i className="uil uil-github-alt"></i>
             </a>
 
-            <a href="https://www.facebook.com/haduc.25.09/" className="home__social-icon" target="_blank">
-                <i className="uil uil-facebook-f"></i>
+            <a href="https://www.instagram.com/haduc.25/" className="home__social-icon" target="_blank">
+                <i className="uil uil-instagram"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@25sdev" className="home__social-icon" target="_blank">
+                <i className="bx bxl-tiktok"></i>
             </a>
         </div>
     );

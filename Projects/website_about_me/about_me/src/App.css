@@ -56,12 +56,14 @@
 
 /* START: Dark Mode */
 [data-theme='dark'] {
-    --container-color: #282c34;
-    /* --body-color: #fff; */
-    --body-color: #282c34;
+    /* --container-color: #212121; */
+    --container-color: #292a2d;
+
+    /* --body-color: #121212; */
+    --body-color: #202124;
     --text-color: #fff;
-    --title-color: #00fff2;
-    --title-color-dark: yellow;
+    --title-color: #e8eaed;
+    --title-color-dark: #8ab4f8;
 
     /* border-color */
     /*Steel Blue*/
