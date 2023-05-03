@@ -1,6 +1,7 @@
 import Work1 from '../../assets/works/work1.jpg';
 import Work2 from '../../assets/works/work2.jpg';
-import Work3 from '../../assets/works/work3.jpg';
+import Work3 from '../../assets/works/app_trang-quyen-store.jpg';
+import Work3Slider from '../../assets/works/app_trang-quyen-store_slider.gif';
 import Work4 from '../../assets/works/web_shopee_preview.png';
 import Work4Slider from '../../assets/works/web_shopee_slider.gif';
 import Work5 from '../../assets/works/app_music.png';
@@ -32,9 +33,9 @@ export const projectsData = [
     },
     {
         id: 4,
-        image: Work5,
-        imgSlider: Work1,
-        title: 'Website - ReactJS',
+        image: Work3,
+        imgSlider: Work3Slider,
+        title: 'Trang Quyen Store - React Native',
         category: 'web',
     },
     {
