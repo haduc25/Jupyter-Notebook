@@ -3,7 +3,8 @@ import Work2 from '../../assets/works/work2.jpg';
 import Work3 from '../../assets/works/work3.jpg';
 import Work4 from '../../assets/works/web_shopee_preview.png';
 import Work4Slider from '../../assets/works/web_shopee_slider.gif';
-import Work5 from '../../assets/works/work4.jpg';
+import Work5 from '../../assets/works/app_music.png';
+import Work5lider from '../../assets/works/app_music_slider.gif';
 import Work6 from '../../assets/works/web_gtsp_preview.png';
 import Work6Slider from '../../assets/works/web_gtsp_slider.gif';
 
@@ -33,15 +34,15 @@ export const projectsData = [
         id: 4,
         image: Work5,
         imgSlider: Work1,
-        title: 'App Music - JS',
-        category: 'app',
+        title: 'Website - ReactJS',
+        category: 'web',
     },
     {
         id: 5,
         image: Work5,
-        imgSlider: Work1,
-        title: 'Website Tiktok - ReactJS',
-        category: 'web',
+        imgSlider: Work5lider,
+        title: 'App Music - Javascript',
+        category: 'app',
     },
     {
         id: 6,
