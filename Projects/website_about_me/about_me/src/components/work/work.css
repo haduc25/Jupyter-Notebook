@@ -76,6 +76,7 @@
 
 .work__img {
     width: 295px;
+    height: 195px; /* thêm vào vì có ảnh sẽ bị nhỏ hơn */
     border-radius: 1rem;
     margin-bottom: var(--mb-1);
 }

@@ -1,8 +1,9 @@
-import Work1 from '../../assets/work1.jpg';
-import Work2 from '../../assets/work2.jpg';
-import Work3 from '../../assets/work3.jpg';
-import Work4 from '../../assets/work4.jpg';
-import Work5 from '../../assets/work5.jpg';
+import Work1 from '../../assets/works/worklist1/work1.jpg';
+import Work2 from '../../assets/works/worklist2/work2.jpg';
+import Work3 from '../../assets/works/worklist3/work3.jpg';
+import Work4 from '../../assets/works/worklist4/work4.jpg';
+import Work5 from '../../assets/works/worklist5/work5.jpg';
+import Work6 from '../../assets/works/worklist5/1.png';
 
 export const projectsData = [
     {
@@ -33,6 +34,12 @@ export const projectsData = [
         id: 5,
         image: Work5,
         title: 'Web design',
+        category: 'web',
+    },
+    {
+        id: 6,
+        image: Work6,
+        title: 'Website giới thiệu sản phẩm',
         category: 'web',
     },
 ];
