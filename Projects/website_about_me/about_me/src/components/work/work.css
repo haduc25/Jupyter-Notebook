@@ -37,6 +37,9 @@
     position: relative;
     padding: 1.25rem;
     border-radius: 1rem;
+
+    /*  */
+    width: 336.6px;
 }
 
 .work__card:before {
@@ -85,6 +88,9 @@
     font-size: var(--normal-font-size);
     font-weight: var(--font-medium);
     margin-bottom: var(--mb-0-5);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .work__button {

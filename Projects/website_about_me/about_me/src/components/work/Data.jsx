@@ -8,28 +8,30 @@ import Work5 from '../../assets/works/app_music.png';
 import Work5lider from '../../assets/works/app_music_slider.gif';
 import Work6 from '../../assets/works/web_gtsp_preview.png';
 import Work6Slider from '../../assets/works/web_gtsp_slider.gif';
-import Work7 from '../../assets/works/work3.jpg';
-import Work8 from '../../assets/works/work4.jpg';
+import Work7 from '../../assets/works/image_processing.jpg';
+import Work7Slider from '../../assets/works/image_processing_slider.gif';
+import Work8 from '../../assets/works/work3.jpg';
+import Work9 from '../../assets/works/work4.jpg';
 
 export const projectsData = [
     {
         id: 1,
         image: Work1,
         imgSlider: Work1,
-        title: 'is SOmething',
-        category: 'app',
+        title: 'Face detection (Trial) - Python',
+        category: 'design',
     },
     {
         id: 2,
         image: Work2,
         imgSlider: Work1,
         title: 'Gesture recognition - Python',
-        category: 'app',
+        category: 'design',
     },
     {
         id: 3,
-        image: Work7,
-        imgSlider: Work8,
+        image: Work8,
+        imgSlider: Work9,
         title: 'HappyFields - React Native',
         category: 'app',
     },
@@ -63,10 +65,10 @@ export const projectsData = [
     },
     {
         id: 8,
-        image: Work8,
-        imgSlider: Work8,
+        image: Work7,
+        imgSlider: Work7Slider,
         title: 'Image Processing - C#',
-        category: 'web',
+        category: 'design',
     },
 ];
 
