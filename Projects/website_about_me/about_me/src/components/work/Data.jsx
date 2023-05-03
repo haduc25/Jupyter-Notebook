@@ -1,7 +1,8 @@
 import Work1 from '../../assets/works/work1.jpg';
 import Work2 from '../../assets/works/work2.jpg';
 import Work3 from '../../assets/works/work3.jpg';
-import Work4 from '../../assets/works/work4.jpg';
+import Work4 from '../../assets/works/web_shopee_preview.png';
+import Work4Slider from '../../assets/works/web_shopee_slider.gif';
 import Work5 from '../../assets/works/work4.jpg';
 import Work6 from '../../assets/works/web_gtsp_preview.png';
 import Work6Slider from '../../assets/works/web_gtsp_slider.gif';
@@ -30,7 +31,7 @@ export const projectsData = [
     },
     {
         id: 4,
-        image: Work4,
+        image: Work5,
         imgSlider: Work1,
         title: 'App Music - JS',
         category: 'app',
@@ -44,8 +45,8 @@ export const projectsData = [
     },
     {
         id: 6,
-        image: Work6,
-        imgSlider: Work6Slider,
+        image: Work4,
+        imgSlider: Work4Slider,
         title: 'Website Shopee - HTML',
         category: 'web',
     },
