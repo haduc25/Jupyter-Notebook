@@ -19,14 +19,23 @@ const Works = () => {
         }
     }, [item]);
 
-    // handle when clicked
+    // // handle when clicked
     const handleClick = (e, index) => {
+        const selectedCategory = e.target.textContent.trim().toLowerCase();
+        console.log('Selected category:', selectedCategory);
+
+        // Filter projects based on selected category
+        const filteredProjects = projects.filter((item) => item.category.trim().toLowerCase() === selectedCategory);
+        console.log('Filtered projects:', filteredProjects);
+
         // set Item
-        console.log(e.target.textContent.toLowerCase(), index);
-        setItem({ name: e.target.textContent });
+        setItem({ name: selectedCategory });
 
         // set Active
         setActive(index);
+
+        console.log('projectsNav:', projectsNav);
+        console.log('projects:', projects);
     };
 
     return (

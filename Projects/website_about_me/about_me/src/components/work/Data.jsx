@@ -8,35 +8,37 @@ import Work5 from '../../assets/works/app_music.png';
 import Work5lider from '../../assets/works/app_music_slider.gif';
 import Work6 from '../../assets/works/web_gtsp_preview.png';
 import Work6Slider from '../../assets/works/web_gtsp_slider.gif';
+import Work7 from '../../assets/works/work3.jpg';
+import Work8 from '../../assets/works/work4.jpg';
 
 export const projectsData = [
     {
         id: 1,
         image: Work1,
         imgSlider: Work1,
-        title: 'Web design',
-        category: 'web',
+        title: 'is SOmething',
+        category: 'app',
     },
     {
         id: 2,
         image: Work2,
         imgSlider: Work1,
-        title: 'App movil',
+        title: 'Gesture recognition - Python',
         category: 'app',
     },
     {
         id: 3,
-        image: Work3,
-        imgSlider: Work1,
-        title: 'Brand design',
-        category: 'design',
+        image: Work7,
+        imgSlider: Work8,
+        title: 'HappyFields - React Native',
+        category: 'app',
     },
     {
         id: 4,
         image: Work3,
         imgSlider: Work3Slider,
         title: 'Trang Quyen Store - React Native',
-        category: 'web',
+        category: 'app',
     },
     {
         id: 5,
@@ -57,6 +59,13 @@ export const projectsData = [
         image: Work6,
         imgSlider: Work6Slider,
         title: 'Website giới thiệu sản phẩm - PHP',
+        category: 'web',
+    },
+    {
+        id: 8,
+        image: Work8,
+        imgSlider: Work8,
+        title: 'Image Processing - C#',
         category: 'web',
     },
 ];
