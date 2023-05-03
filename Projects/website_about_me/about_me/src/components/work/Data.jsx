@@ -1,4 +1,6 @@
 import Work1 from '../../assets/works/work1.jpg';
+import _Work1 from '../../assets/works/_face_detection.png';
+import Work1Slider from '../../assets/works/face_detection.gif';
 import Work2 from '../../assets/works/work2.jpg';
 import Work3 from '../../assets/works/app_trang-quyen-store.jpg';
 import Work3Slider from '../../assets/works/app_trang-quyen-store_slider.gif';
@@ -16,8 +18,8 @@ import Work9 from '../../assets/works/work4.jpg';
 export const projectsData = [
     {
         id: 1,
-        image: Work1,
-        imgSlider: Work1,
+        image: _Work1,
+        imgSlider: Work1Slider,
         title: 'Face detection (Trial) - Python',
         category: 'design',
     },
