@@ -1,6 +1,7 @@
 import Work1 from '../../assets/works/_face_detection.png';
 import Work1Slider from '../../assets/works/face_detection.gif';
-import Work2 from '../../assets/works/work2.jpg';
+import Work2 from '../../assets/works/happy.png';
+import Work2Slider from '../../assets/works/happy_slider.gif';
 import Work3 from '../../assets/works/app_trang-quyen-store.jpg';
 import Work3Slider from '../../assets/works/app_trang-quyen-store_slider.gif';
 import Work4 from '../../assets/works/web_shopee_preview.png';
@@ -11,8 +12,8 @@ import Work6 from '../../assets/works/web_gtsp_preview.png';
 import Work6Slider from '../../assets/works/web_gtsp_slider.gif';
 import Work7 from '../../assets/works/image_processing.jpg';
 import Work7Slider from '../../assets/works/image_processing_slider.gif';
-import Work10 from '../../assets/works/new2.png';
-import Work10Slider from '../../assets/works/new.gif';
+import Work8 from '../../assets/works/gesture_recognition.png';
+import Work8Slider from '../../assets/works/gesture_recognition_slider.gif';
 
 export const projectsData = [
     {
@@ -24,16 +25,16 @@ export const projectsData = [
     },
     {
         id: 2,
-        image: Work10,
-        imgSlider: Work10Slider,
+        image: Work8,
+        imgSlider: Work8Slider,
         title: 'Gesture recognition - Python',
         category: 'design',
     },
     {
         id: 3,
         image: Work2,
-        imgSlider: Work2,
-        title: 'HappyFields - React Native',
+        imgSlider: Work2Slider,
+        title: 'Happy Fields - React Native',
         category: 'app',
     },
     {
