@@ -1,0 +1,10 @@
+pip install opencv-python
+
+
+//testing installed
+import cv2
+print(cv2.__version__) #4.7.0
+
+# required python 3.10
+=> Linking: https://pypi.org/project/mediapipe/0.9.0/
+pip install mediapipe

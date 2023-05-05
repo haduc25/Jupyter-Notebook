@@ -150,6 +150,10 @@
 
     .work__img {
         width: 100%;
+        height: unset;
+    }
+    .work__card {
+        width: 100%;
     }
 }
 

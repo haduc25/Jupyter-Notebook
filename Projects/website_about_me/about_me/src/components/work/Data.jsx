@@ -1,5 +1,4 @@
-import Work1 from '../../assets/works/work1.jpg';
-import _Work1 from '../../assets/works/_face_detection.png';
+import Work1 from '../../assets/works/_face_detection.png';
 import Work1Slider from '../../assets/works/face_detection.gif';
 import Work2 from '../../assets/works/work2.jpg';
 import Work3 from '../../assets/works/app_trang-quyen-store.jpg';
@@ -12,28 +11,28 @@ import Work6 from '../../assets/works/web_gtsp_preview.png';
 import Work6Slider from '../../assets/works/web_gtsp_slider.gif';
 import Work7 from '../../assets/works/image_processing.jpg';
 import Work7Slider from '../../assets/works/image_processing_slider.gif';
-import Work8 from '../../assets/works/work3.jpg';
-import Work9 from '../../assets/works/work4.jpg';
+import Work10 from '../../assets/works/new2.png';
+import Work10Slider from '../../assets/works/new.gif';
 
 export const projectsData = [
     {
         id: 1,
-        image: _Work1,
+        image: Work1,
         imgSlider: Work1Slider,
         title: 'Face detection (Trial) - Python',
         category: 'design',
     },
     {
         id: 2,
-        image: Work2,
-        imgSlider: Work1,
+        image: Work10,
+        imgSlider: Work10Slider,
         title: 'Gesture recognition - Python',
         category: 'design',
     },
     {
         id: 3,
-        image: Work8,
-        imgSlider: Work9,
+        image: Work2,
+        imgSlider: Work2,
         title: 'HappyFields - React Native',
         category: 'app',
     },

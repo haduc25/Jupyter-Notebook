@@ -38,6 +38,10 @@
     .scrollup__icon {
         font-size: 1.25rem;
     }
+
+    .show-scroll {
+        bottom: 4rem;
+    }
 }
 
 /* For medium devices */

@@ -1,0 +1,4 @@
+conda activate env_name
+
+conda activate deep_learning
+
