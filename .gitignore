@@ -5,3 +5,13 @@ deep learning/archive.zip
 # file train & test
 deep learning/better_than_version/input/dogs-vs-cats/test1.zip
 deep learning/better_than_version/input/dogs-vs-cats/train.zip
+
+
+# folder
+deep learning/lastVersion/dataset/training_set/
+deep learning/lastVersion/dataset/validation_set/
+
+deep learning/lastVersion/input/dogs-vs-cats/
+deep learning/lastVersion/working/data/
+deep learning/lastVersion/dogs-vs-cats.zip
+
