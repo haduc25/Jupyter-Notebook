@@ -68,17 +68,17 @@ export const handleNotify = (e, { haveImage = false, title, content, toastType =
     };
 
     // handle for toast types
-    let toastFuncs2;
+    let toastFuncs;
 
     switch (toastType) {
         case 'info':
         case 'success':
         case 'warning':
         case 'error':
-            toastFuncs2 = toast[toastType](message, options);
+            toastFuncs = toast[toastType](message, options);
             break;
 
         default:
-            toastFuncs2 = toast(message2, options);
+            toastFuncs = toast(message2, options);
     }
 };
