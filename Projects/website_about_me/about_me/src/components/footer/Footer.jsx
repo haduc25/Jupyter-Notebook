@@ -1,5 +1,6 @@
 import React from 'react';
 import './footer.css';
+import { minus, sum } from '../../utils';
 
 const Footer = () => {
     return (

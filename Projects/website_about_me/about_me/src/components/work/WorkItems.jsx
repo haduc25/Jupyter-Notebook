@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { handleNotify } from '../../utils';
 
 const WorkItems = ({ item }) => {
     const [hovered, setHovered] = useState(false);
@@ -46,7 +47,25 @@ const WorkItems = ({ item }) => {
             />
             <h3 className="work__title">{item.title}</h3>
 
-            <a href="#" className="work__button" onClick={(e) => whenClickedToDemo(e)}>
+            {/* <a href="#" className="work__button" onClick={(e) => whenClickedToDemo(e)}> */}
+            <a
+                href="#"
+                className="work__button"
+                onClick={(e) =>
+                    handleNotify(e, {
+                        haveImage: false,
+                        srcImg: 'https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/344803825_259905209786528_2805273012473307820_n.jpg?stp=dst-jpg_p843x403&_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=NtBVZuCqrVQAX823QPx&_nc_ht=scontent.fhan2-5.fna&oh=00_AfCoHz9NSX881wEGKPmBGpFQQEK01tYvoSLCguBlhEjM1Q&oe=645C260D',
+                        title: 'Notification Title',
+                        content: 'Tính năng đang được phát triển. Vui lòng thử lại sau! ❤️',
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
+                }
+            >
                 Demo <i className="bx bx-right-arrow-alt work__button-icon"></i>
             </a>
             <ToastContainer />
