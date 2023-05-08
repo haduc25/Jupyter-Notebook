@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // handle when call the notify
-export const handleNotify = (e, { haveImage = false, title, content, toastType = 'error', ...props }) => {
+export const handleNotify = (e, { haveImage = false, title, content, toastType = 'error2', ...props }) => {
     // bcs dont have pages preview so i'll show them the message (toast message)
 
     // first remove preventDefault() of a card
@@ -14,8 +14,60 @@ export const handleNotify = (e, { haveImage = false, title, content, toastType =
     // handle for dark theme & light theme
     const isDarkTheme = getComputedStyle(document.body).getPropertyValue('--body-color') === '#202124';
 
-    // handle for toast types
+    // handle message of toast
+    const message = (
+        <div>
+            <h3>{title}</h3>
+            <p>{content}</p>
+            {haveImage && props.srcImg && (
+                <img src={props.srcImg} alt="Oops!!!" style={{ maxWidth: '100%', maxHeight: '250px' }} />
+            )}
 
+            {/* {console.log('toastType: ', toastType)} */}
+        </div>
+    );
+
+    // handle message of toast2
+    const message2 = (
+        <div>
+            <h3>{title}</h3>
+            <p>{content}</p>
+            {haveImage && props.srcImg && (
+                <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        paddingTop: '6%',
+                        paddingLeft: '6%',
+                    }}
+                >
+                    <img
+                        src={props.srcImg}
+                        alt="Oops!!!"
+                        style={{ maxWidth: '100%', maxHeight: '250px', borderRadius: '8px' }}
+                    />
+                </div>
+            )}
+        </div>
+    );
+
+    // handle options of toast
+    const options = {
+        // default
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: isDarkTheme ? 'dark' : 'light',
+
+        // more options
+        ...props,
+    };
+
+    // handle for toast types
     let toastFuncs2;
 
     switch (toastType) {
@@ -23,47 +75,10 @@ export const handleNotify = (e, { haveImage = false, title, content, toastType =
         case 'success':
         case 'warning':
         case 'error':
-            toastFuncs2 = toast[toastType]('meow meow');
+            toastFuncs2 = toast[toastType](message, options);
             break;
 
         default:
-            toastFuncs2 = toast('nahnahnah');
+            toastFuncs2 = toast(message2, options);
     }
-
-    // const toastFuncs = haveImage && props.srcImg ? toast[type] : toast;
-    // const toastFuncs = toast['info']('meow');
-
-    // const message = (
-    //     <div>
-    //         {title && <h3>{title}</h3>}
-    //         {content && <p>{content}</p>}
-    //         {haveImage && props.srcImg && <img src={props.srcImg} alt="" />}
-    //     </div>
-    // );
-
-    // console.log(toastFuncs);
-
-    // toastFuncs(message, {
-    //     ...props,
-    //     theme: isDarkTheme ? 'dark' : 'light',
-    // });
-
-    // toast.info(
-    //     <div>
-    //         {haveImage && <img src={props.srcImg} alt="Oops!!!" style={{ maxWidth: '100%', maxHeight: '250px' }} />}
-    //         <h3>{title}</h3>
-    //         <p>{content}</p>
-    //     </div>,
-    //     {
-    //         // autoClose: 5000,
-    //         // hideProgressBar: false,
-    //         // closeOnClick: true,
-    //         // pauseOnHover: true,
-    //         // draggable: true,
-    //         // progress: undefined,
-    //         // theme: isDarkTheme ? 'dark' : 'light',
-    //         ...props,
-    //         theme: isDarkTheme ? 'dark' : 'light',
-    //     },
-    // );
 };
