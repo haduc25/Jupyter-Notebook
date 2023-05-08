@@ -12,7 +12,11 @@ export const handleNotify = (e, { haveImage = false, title, content, toastType =
     e.preventDefault();
 
     // handle for dark theme & light theme
-    const isDarkTheme = getComputedStyle(document.body).getPropertyValue('--body-color') === '#202124';
+    // const isDarkTheme = getComputedStyle(document.body).getPropertyValue('--body-color') === '#202124';
+    const isDarkTheme = document.body.getAttribute('data-theme') === 'dark';
+
+    console.log('isDarkTheme: ', isDarkTheme);
+    // return;
 
     // handle message of toast
     const message = (
@@ -32,6 +36,9 @@ export const handleNotify = (e, { haveImage = false, title, content, toastType =
         <div>
             <h3>{title}</h3>
             <p>{content}</p>
+            <form>
+                <input type="text" />
+            </form>
             {haveImage && props.srcImg && (
                 <div
                     style={{
@@ -55,13 +62,14 @@ export const handleNotify = (e, { haveImage = false, title, content, toastType =
     // handle options of toast
     const options = {
         // default
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
-        closeOnClick: true,
+        closeOnClick: false,
         pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
+        draggable: false,
+        progress: false,
         theme: isDarkTheme ? 'dark' : 'light',
+        closeButton: false,
 
         // more options
         ...props,
@@ -79,6 +87,6 @@ export const handleNotify = (e, { haveImage = false, title, content, toastType =
             break;
 
         default:
-            toastFuncs = toast(message2, options);
+            toast(message2, options);
     }
 };
