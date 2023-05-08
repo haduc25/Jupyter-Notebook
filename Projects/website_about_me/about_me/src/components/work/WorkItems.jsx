@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { handleNotify } from '../../utils';
 
 const WorkItems = ({ item }) => {
@@ -30,7 +29,7 @@ const WorkItems = ({ item }) => {
             >
                 Demo <i className="bx bx-right-arrow-alt work__button-icon"></i>
             </a>
-            <ToastContainer />
+            {/* <ToastContainer /> */}
         </div>
     );
 };

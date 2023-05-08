@@ -1,6 +1,6 @@
 import React from 'react';
 import './footer.css';
-import { minus, sum } from '../../utils';
+import { handleNotify } from '../../utils';
 
 const Footer = () => {
     return (
@@ -20,8 +20,18 @@ const Footer = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="#testimonials" className="footer__link">
-                            Testimonials
+                        <a
+                            href="#testimonials"
+                            className="footer__link"
+                            onClick={(e) =>
+                                handleNotify(e, {
+                                    title: 'Thông báo',
+                                    content: 'Tính năng đang được phát triển. Vui lòng thử lại sau! ❤️',
+                                    toastType: 'info',
+                                })
+                            }
+                        >
+                            Donate
                         </a>
                     </li>
                 </ul>

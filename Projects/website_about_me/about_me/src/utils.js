@@ -28,6 +28,7 @@ export const handleNotify = (e, { haveImage = false, title, content, toastType =
             )}
 
             {/* {console.log('toastType: ', toastType)} */}
+            <ToastContainer />
         </div>
     );
 
