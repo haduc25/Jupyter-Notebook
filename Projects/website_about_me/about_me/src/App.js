@@ -12,11 +12,13 @@ import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import ScrollUp from './components/scrollup/ScrollUp';
 import DarkMode from './components/themes/DarkMode';
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
     return (
         <>
             <Header />
+
             <main className="main">
                 <Home />
                 {/* <DarkMode /> */}
@@ -31,6 +33,7 @@ function App() {
 
             <Footer />
             <ScrollUp />
+            <ToastContainer />
         </>
     );
 }

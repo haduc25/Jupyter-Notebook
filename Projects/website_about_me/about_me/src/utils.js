@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // handle when call the notify
-export const handleNotify = (e, { haveImage = false, title, content, toastType = 'info2', ...props }) => {
+export const handleNotify = (e, { title, content, srcImg, toastType = 'none', ...props }) => {
     // bcs dont have pages preview so i'll show them the message (toast message)
 
     // first remove preventDefault() of a card
@@ -23,12 +23,9 @@ export const handleNotify = (e, { haveImage = false, title, content, toastType =
         <div>
             <h3>{title}</h3>
             <p>{content}</p>
-            {haveImage && props.srcImg && (
-                <img src={props.srcImg} alt="Oops!!!" style={{ maxWidth: '100%', maxHeight: '250px' }} />
-            )}
+            {srcImg && <img src={srcImg} alt="Oops!!!" style={{ maxWidth: '100%', maxHeight: '250px' }} />}
 
             {/* {console.log('toastType: ', toastType)} */}
-            <ToastContainer />
         </div>
     );
 
@@ -40,7 +37,7 @@ export const handleNotify = (e, { haveImage = false, title, content, toastType =
             {/* <form>
                 <input type="text" />
             </form> */}
-            {haveImage && props.srcImg && (
+            {srcImg && (
                 <div
                     style={{
                         display: 'flex',
@@ -51,12 +48,50 @@ export const handleNotify = (e, { haveImage = false, title, content, toastType =
                     }}
                 >
                     <img
-                        src={props.srcImg}
+                        src={srcImg}
                         alt="Oops!!!"
                         style={{ maxWidth: '100%', maxHeight: '250px', borderRadius: '8px' }}
                     />
                 </div>
             )}
+
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    marginTop: '10px',
+                    marginLeft: '28px',
+                    marginRight: '28px',
+                }}
+            >
+                <button
+                    style={{
+                        // display: 'inline-flex',
+                        // justifyContent: 'center',
+
+                        // textAlign: 'center',
+                        // backgroundColor: '#fff',
+                        // color: '#ccc',
+                        // padding: '12px',
+
+                        // borderRadius: '1rem',
+                        // fontWeight: '500',
+                        // width: '100%',
+
+                        backgroundColor: '#4CAF50',
+                        border: 'none',
+                        color: 'white',
+                        padding: '15px 32px',
+                        textAlign: 'center',
+                        textDecoration: 'none',
+                        display: 'inline-block',
+                        fontSize: '16px',
+                        width: '80%',
+                    }}
+                >
+                    Rand
+                </button>
+            </div>
         </div>
     );
 
@@ -90,4 +125,16 @@ export const handleNotify = (e, { haveImage = false, title, content, toastType =
         default:
             toast(message2, options);
     }
+
+    // set the styles for the container of the toast messages
+    const containerStyle = {
+        zIndex: 9999,
+        position: 'fixed',
+        top: '80px',
+        right: '20px',
+        maxWidth: '400px',
+        width: '100%',
+    };
+
+    return <ToastContainer style={containerStyle} />;
 };
