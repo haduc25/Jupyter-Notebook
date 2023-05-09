@@ -1,5 +1,6 @@
 // utils.js
 import { bankingData } from './Data';
+import './utils.css';
 
 // react-toastify
 import { ToastContainer, toast } from 'react-toastify';
@@ -45,6 +46,9 @@ export const handleNotify = (e, { isQR = false, title, content, srcImg, toastTyp
         </div>
     );
 
+    // call rand
+    let randomBankingData2 = getRandomBankingData();
+
     // handle message of toast2
     const message2 = (
         <div>
@@ -73,69 +77,29 @@ export const handleNotify = (e, { isQR = false, title, content, srcImg, toastTyp
 
             {/* handle qrcode */}
             {isQR && (
-                <div
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        paddingTop: '6%',
-                        paddingLeft: '5%',
-                    }}
-                >
-                    <img
-                        src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/344803825_259905209786528_2805273012473307820_n.jpg?stp=dst-jpg_p843x403&_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=NtBVZuCqrVQAX823QPx&_nc_ht=scontent.fhan2-5.fna&oh=00_AfCoHz9NSX881wEGKPmBGpFQQEK01tYvoSLCguBlhEjM1Q&oe=645C260D"
-                        alt="Oops!!!"
-                        style={{ maxWidth: '100%', maxHeight: '250px', borderRadius: '8px' }}
-                    />
+                <div>
+                    <div
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            paddingTop: '6%',
+                            paddingLeft: '5%',
+                        }}
+                    >
+                        <img
+                            src={randomBankingData2.image}
+                            alt="Oops!!!"
+                            style={{ maxWidth: '100%', maxHeight: '250px', borderRadius: '8px' }}
+                        />
+                    </div>
+                    <div>
+                        <h2 className={`data-item-${randomBankingData2.id}`}>
+                            {randomBankingData2.bank} - {randomBankingData2.number}
+                        </h2>
+                    </div>
                 </div>
             )}
-
-            <div>
-                {bankingData.map((index) => (
-                    <h2 key={index}>{index.id}</h2>
-                ))}
-            </div>
-            <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    marginTop: '10px',
-                    marginLeft: '28px',
-                    marginRight: '28px',
-                }}
-            >
-                <button
-                    style={{
-                        // display: 'inline-flex',
-                        // justifyContent: 'center',
-
-                        // textAlign: 'center',
-                        // backgroundColor: '#fff',
-                        // color: '#ccc',
-                        // padding: '12px',
-
-                        borderRadius: '1rem',
-                        // fontWeight: '500',
-                        // width: '100%',
-
-                        backgroundColor: '#4CAF50',
-                        border: 'none',
-                        color: 'white',
-                        padding: '15px 32px',
-                        textAlign: 'center',
-                        textDecoration: 'none',
-                        display: 'inline-block',
-                        fontSize: '16px',
-                        width: '80%',
-                    }}
-                    onClick={() => {
-                        const randomBankingData = getRandomBankingData();
-                        console.log(randomBankingData);
-                    }}
-                >
-                    Rand
-                </button>
-            </div>
         </div>
     );
 
@@ -156,14 +120,12 @@ export const handleNotify = (e, { isQR = false, title, content, srcImg, toastTyp
     };
 
     // handle for toast types
-    let toastFuncs;
-
     switch (toastType) {
         case 'info':
         case 'success':
         case 'warning':
         case 'error':
-            toastFuncs = toast[toastType](message, options);
+            toast[toastType](message, options);
             break;
 
         default:
