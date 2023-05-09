@@ -8,7 +8,7 @@
 }
 
 .utils_msg-wrapper_img {
-    display: 'flex';
+    display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 6%;
@@ -25,4 +25,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+    .utils_msg-img {
+        margin-bottom: 10px;
+    }
 }
