@@ -1,6 +1,6 @@
 import React from 'react';
 import './footer.css';
-import { handleNotify } from '../../utils';
+import { handleNotify } from '../../utils/utils';
 
 const Footer = () => {
     return (
@@ -25,12 +25,13 @@ const Footer = () => {
                             className="footer__link"
                             onClick={(e) =>
                                 handleNotify(e, {
-                                    srcImg: 'https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/344803825_259905209786528_2805273012473307820_n.jpg?stp=dst-jpg_p843x403&_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=NtBVZuCqrVQAX823QPx&_nc_ht=scontent.fhan2-5.fna&oh=00_AfCoHz9NSX881wEGKPmBGpFQQEK01tYvoSLCguBlhEjM1Q&oe=645C260D',
+                                    isQR: true,
+                                    // srcImg: 'https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/344803825_259905209786528_2805273012473307820_n.jpg?stp=dst-jpg_p843x403&_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=NtBVZuCqrVQAX823QPx&_nc_ht=scontent.fhan2-5.fna&oh=00_AfCoHz9NSX881wEGKPmBGpFQQEK01tYvoSLCguBlhEjM1Q&oe=645C260D',
                                     title: 'Mua cho tôi một ly trà đá 😁😁',
-                                    content:
-                                        'Tính năng đang được phát triển. Vui lòng thử lại sau! ❤️\n\n\n\n Hà Minh Đức\nBIDV',
-                                    // autoClose: 10000,
-                                    autoClose: 1000,
+                                    content: 'Tính năng đang được phát triển. Vui lòng thử lại sau!',
+                                    autoClose: 10000,
+                                    // autoClose: 1000,
+                                    // autoClose: false,
                                 })
                             }
                         >

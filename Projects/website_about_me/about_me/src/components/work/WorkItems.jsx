@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { handleNotify } from '../../utils';
+import { handleNotify } from '../../utils/utils';
 
 const WorkItems = ({ item }) => {
     const [hovered, setHovered] = useState(false);

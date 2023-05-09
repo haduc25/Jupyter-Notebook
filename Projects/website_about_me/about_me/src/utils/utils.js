@@ -1,11 +1,27 @@
 // utils.js
+import { bankingData } from './Data';
 
 // react-toastify
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// handle for banking
+let previousIndex = null;
+
+function getRandomBankingData() {
+    let randomIndex = Math.floor(Math.random() * bankingData.length);
+
+    // Generate a new random index if it is the same as the previous index
+    while (randomIndex === previousIndex) {
+        randomIndex = Math.floor(Math.random() * bankingData.length);
+    }
+
+    previousIndex = randomIndex;
+    return bankingData[randomIndex];
+}
+
 // handle when call the notify
-export const handleNotify = (e, { title, content, srcImg, toastType = 'none', ...props }) => {
+export const handleNotify = (e, { isQR = false, title, content, srcImg, toastType = 'none', ...props }) => {
     // bcs dont have pages preview so i'll show them the message (toast message)
 
     // first remove preventDefault() of a card
@@ -37,7 +53,7 @@ export const handleNotify = (e, { title, content, srcImg, toastType = 'none', ..
             {/* <form>
                 <input type="text" />
             </form> */}
-            {srcImg && (
+            {/* {srcImg && (
                 <div
                     style={{
                         display: 'flex',
@@ -53,8 +69,32 @@ export const handleNotify = (e, { title, content, srcImg, toastType = 'none', ..
                         style={{ maxWidth: '100%', maxHeight: '250px', borderRadius: '8px' }}
                     />
                 </div>
+            )} */}
+
+            {/* handle qrcode */}
+            {isQR && (
+                <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        paddingTop: '6%',
+                        paddingLeft: '5%',
+                    }}
+                >
+                    <img
+                        src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-6/344803825_259905209786528_2805273012473307820_n.jpg?stp=dst-jpg_p843x403&_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=NtBVZuCqrVQAX823QPx&_nc_ht=scontent.fhan2-5.fna&oh=00_AfCoHz9NSX881wEGKPmBGpFQQEK01tYvoSLCguBlhEjM1Q&oe=645C260D"
+                        alt="Oops!!!"
+                        style={{ maxWidth: '100%', maxHeight: '250px', borderRadius: '8px' }}
+                    />
+                </div>
             )}
 
+            <div>
+                {bankingData.map((index) => (
+                    <h2 key={index}>{index.id}</h2>
+                ))}
+            </div>
             <div
                 style={{
                     display: 'flex',
@@ -74,7 +114,7 @@ export const handleNotify = (e, { title, content, srcImg, toastType = 'none', ..
                         // color: '#ccc',
                         // padding: '12px',
 
-                        // borderRadius: '1rem',
+                        borderRadius: '1rem',
                         // fontWeight: '500',
                         // width: '100%',
 
@@ -87,6 +127,10 @@ export const handleNotify = (e, { title, content, srcImg, toastType = 'none', ..
                         display: 'inline-block',
                         fontSize: '16px',
                         width: '80%',
+                    }}
+                    onClick={() => {
+                        const randomBankingData = getRandomBankingData();
+                        console.log(randomBankingData);
                     }}
                 >
                     Rand
