@@ -1,0 +1,28 @@
+.utils_container {
+    z-index: 9999;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    max-width: 400px;
+    width: '100%';
+}
+
+.utils_msg-wrapper_img {
+    display: 'flex';
+    align-items: center;
+    justify-content: center;
+    padding-top: 6%;
+    padding-left: 5%;
+}
+
+.utils_msg-img {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 8px;
+}
+
+.utils_msg-wrapper_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

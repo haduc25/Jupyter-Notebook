@@ -40,7 +40,7 @@ export const handleNotify = (e, { isQR = false, title, content, srcImg, toastTyp
         <div>
             <h3>{title}</h3>
             <p>{content}</p>
-            {srcImg && <img src={srcImg} alt="Oops!!!" style={{ maxWidth: '100%', maxHeight: '250px' }} />}
+            {srcImg && <img src={srcImg} alt="Oops!!!" className="utils_msg-img" />}
 
             {/* {console.log('toastType: ', toastType)} */}
         </div>
@@ -59,18 +59,12 @@ export const handleNotify = (e, { isQR = false, title, content, srcImg, toastTyp
             </form> */}
             {/* {srcImg && (
                 <div
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        paddingTop: '6%',
-                        paddingLeft: '5%',
-                    }}
+                    className="utils_msg-wrapper_img"
                 >
                     <img
                         src={srcImg}
                         alt="Oops!!!"
-                        style={{ maxWidth: '100%', maxHeight: '250px', borderRadius: '8px' }}
+                        className="utils_msg-img"
                     />
                 </div>
             )} */}
@@ -78,25 +72,12 @@ export const handleNotify = (e, { isQR = false, title, content, srcImg, toastTyp
             {/* handle qrcode */}
             {isQR && (
                 <div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            paddingTop: '6%',
-                            paddingLeft: '5%',
-                        }}
-                    >
-                        <img
-                            src={randomBankingData2.image}
-                            alt="Oops!!!"
-                            style={{ maxWidth: '100%', maxHeight: '250px', borderRadius: '8px' }}
-                        />
+                    <div className="utils_msg-wrapper_img">
+                        <img src={randomBankingData2.image} alt="Oops!!!" className="utils_msg-img" />
                     </div>
-                    <div>
-                        <h2 className={`data-item-${randomBankingData2.id}`}>
-                            {randomBankingData2.bank} - {randomBankingData2.number}
-                        </h2>
+                    <div className={`utils_msg-wrapper_text data-item-${randomBankingData2.id}`}>
+                        <h3>{randomBankingData2.bank}</h3>
+                        <h3>{randomBankingData2.number}</h3>
                     </div>
                 </div>
             )}
@@ -132,15 +113,5 @@ export const handleNotify = (e, { isQR = false, title, content, srcImg, toastTyp
             toast(message2, options);
     }
 
-    // set the styles for the container of the toast messages
-    const containerStyle = {
-        zIndex: 9999,
-        position: 'fixed',
-        top: '80px',
-        right: '20px',
-        maxWidth: '400px',
-        width: '100%',
-    };
-
-    return <ToastContainer style={containerStyle} />;
+    return <ToastContainer className="utils_container" />;
 };
