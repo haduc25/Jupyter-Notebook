@@ -48,8 +48,8 @@ const Footer = () => {
                         <i className="bx bxl-instagram"></i>
                     </a>
 
-                    <a href="https://twitter.com/" className="footer__social-link" target="_blank">
-                        <i className="bx bxl-twitter"></i>
+                    <a href="https://www.tiktok.com/@25sdev" className="footer__social-link" target="_blank">
+                        <i className="bx bxl-tiktok"></i>
                     </a>
 
                     <a href="https://github.com/haduc25" className="footer__social-link" target="_blank">
