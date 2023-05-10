@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { handleNotify, validateForm } from '../../utils/utils';
 
 import './contact.css';
 
@@ -25,6 +24,30 @@ const Contact = () => {
     };
 
     // ################## END: EMAILJS ################## //
+
+    // ################## START: VALIDATOR ################## //
+    function validateForm() {
+        const name = document.querySelector('input[name="name"]');
+        const email = document.querySelector('input[name="email"]');
+        const project = document.querySelector('textarea[name="project"]');
+
+        if (!name.value || !email.value || !project.value) {
+            console.error('Please fill out all fields.');
+            alert('Please fill out all fields, Please try agian!');
+            return false;
+        }
+
+        if (!/\S+@\S+\.\S+/.test(email.value)) {
+            console.error('Please enter a valid email address.');
+            return false;
+        }
+
+        // Add more validation rules for the other fields here
+
+        console.log('Success!');
+        return true;
+    }
+    // ################## END: VALIDATOR ################## //
 
     return (
         <section className="contact section" id="contact">
@@ -77,23 +100,11 @@ const Contact = () => {
                     <form
                         className="contact__form"
                         ref={form}
-                        // onSubmit={(e) => {
-                        //     // handleNotify(e, {
-                        //     //     title: 'meow',
-                        //     //     content: 'meow cl',
-                        //     //     toastType: 'error',
-                        //     //     // toastType: 'success',
-                        //     // });
-
-                        //     // if (validateForm()) sendEmail(e);
-                        //     // if (validateForm()) alert('Meow meow its done');
-                        // }}
-
-                        onSubmit={(e) =>
-                            validateForm(e, {
-                                errorMsg: 'Vui lòng điền đầy đủ thông tin!',
-                            })
-                        }
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            // if (validateForm()) sendEmail(e);
+                            if (validateForm()) alert('Meow meow its done');
+                        }}
                         autoComplete="off"
                     >
                         <div className="contact__form-div">

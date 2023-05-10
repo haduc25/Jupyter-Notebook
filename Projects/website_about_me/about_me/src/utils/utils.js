@@ -115,3 +115,30 @@ export const handleNotify = (e, { isQR = false, title, content, srcImg, toastTyp
 
     return <ToastContainer className="utils_container" />;
 };
+
+// Handle VALIDATOR FORM (Using for Contact)
+// ################## START: VALIDATOR ################## //
+export const validateForm = (e, { errorMsg = 'Please fill out all fields.' }) => {
+    e.preventDefault();
+
+    const name = document.querySelector('input[name="name"]');
+    const email = document.querySelector('input[name="email"]');
+    const project = document.querySelector('textarea[name="project"]');
+
+    if (!name.value || !email.value || !project.value) {
+        console.error(errorMsg);
+        // show msg
+        handleNotify(e, {
+            title: 'Lỗi',
+            content: errorMsg,
+            toastType: 'error',
+        });
+        return false;
+    }
+
+    // Add more validation rules for the other fields here
+
+    console.log('Success!');
+    // return true;
+};
+// ################## END: VALIDATOR ################## //
