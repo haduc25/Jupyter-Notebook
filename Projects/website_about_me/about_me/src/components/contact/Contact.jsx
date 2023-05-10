@@ -9,14 +9,24 @@ const Contact = () => {
     const form = useRef();
 
     const sendEmail = (e) => {
-        e.preventDefault();
-
         emailjs.sendForm('service_gydpclk', 'template_3mjztpt', form.current, '1rGYGFp3nkM6bwOk2').then(
             (result) => {
                 console.log(result.text);
+                // show message
+                handleNotify(e, {
+                    title: 'Thành công',
+                    content: 'Đã gửi tin nhắn thành công!',
+                    toastType: 'success',
+                });
             },
             (error) => {
                 console.log(error.text);
+                // show message
+                handleNotify(e, {
+                    title: 'Lỗi',
+                    content: 'error.text',
+                    toastType: 'error',
+                });
             },
         );
 
@@ -77,23 +87,13 @@ const Contact = () => {
                     <form
                         className="contact__form"
                         ref={form}
-                        // onSubmit={(e) => {
-                        //     // handleNotify(e, {
-                        //     //     title: 'meow',
-                        //     //     content: 'meow cl',
-                        //     //     toastType: 'error',
-                        //     //     // toastType: 'success',
-                        //     // });
-
-                        //     // if (validateForm()) sendEmail(e);
-                        //     // if (validateForm()) alert('Meow meow its done');
-                        // }}
-
-                        onSubmit={(e) =>
-                            validateForm(e, {
+                        onSubmit={(e) => {
+                            const result = validateForm(e, {
                                 errorMsg: 'Vui lòng điền đầy đủ thông tin!',
-                            })
-                        }
+                            });
+
+                            if (result) sendEmail(e);
+                        }}
                         autoComplete="off"
                     >
                         <div className="contact__form-div">

@@ -139,6 +139,6 @@ export const validateForm = (e, { errorMsg = 'Please fill out all fields.' }) =>
     // Add more validation rules for the other fields here
 
     console.log('Success!');
-    // return true;
+    return true;
 };
 // ################## END: VALIDATOR ################## //
