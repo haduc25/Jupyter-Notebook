@@ -14,6 +14,10 @@ import ScrollUp from './components/scrollup/ScrollUp';
 import DarkMode from './components/themes/DarkMode';
 import { ToastContainer, toast } from 'react-toastify';
 
+//
+import IPComponent from './utils/IPComponent';
+import DeviceInfoComponent from './utils/DeviceInfoComponent';
+
 function App() {
     return (
         <>
@@ -34,6 +38,9 @@ function App() {
             <Footer />
             <ScrollUp />
             <ToastContainer />
+
+            <IPComponent />
+            <DeviceInfoComponent />
         </>
     );
 }
