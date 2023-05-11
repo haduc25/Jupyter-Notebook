@@ -17,10 +17,13 @@ import { ToastContainer, toast } from 'react-toastify';
 //
 import IPComponent from './utils/IPComponent';
 import DeviceInfoComponent from './utils/DeviceInfoComponent';
+import GetInfoComponent from './utils/GetInfoComponent';
+import TimeTracker from './utils/TimeTracker';
 
 function App() {
     return (
         <>
+            {/* <GetInfoComponent /> */}
             <Header />
 
             <main className="main">
@@ -39,8 +42,9 @@ function App() {
             <ScrollUp />
             <ToastContainer />
 
-            <IPComponent />
-            <DeviceInfoComponent />
+            {/* <IPComponent />
+            <DeviceInfoComponent /> */}
+            <GetInfoComponent />
         </>
     );
 }
