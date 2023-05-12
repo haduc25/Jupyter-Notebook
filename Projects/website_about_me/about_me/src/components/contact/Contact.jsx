@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { validateForm, handleSendEmail } from '../../utils/utils';
 
 import './contact.css';
+import GetInfoComponent from '../../utils/GetInfoComponent';
 
 const Contact = () => {
     const form = useRef();
@@ -137,6 +138,9 @@ const Contact = () => {
                             </svg>
                         </button>
                     </form>
+
+                    {/* Pass the formValues to GetInfoComponent */}
+                    <GetInfoComponent formValues={form} ipData={ipData} />
                 </div>
             </div>
         </section>

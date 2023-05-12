@@ -44,7 +44,7 @@ function App() {
 
             {/* <IPComponent />
             <DeviceInfoComponent /> */}
-            <GetInfoComponent />
+            {/* <GetInfoComponent /> */}
         </>
     );
 }

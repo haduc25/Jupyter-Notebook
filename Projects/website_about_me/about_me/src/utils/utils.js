@@ -29,7 +29,7 @@ export const handleNotify = (e, { isQR = false, title, content, srcImg, toastTyp
     // bcs dont have pages preview so i'll show them the message (toast message)
 
     // first remove preventDefault() of a card
-    e.preventDefault();
+    e?.preventDefault();
 
     // handle for dark theme & light theme
     // const isDarkTheme = getComputedStyle(document.body).getPropertyValue('--body-color') === '#202124';
@@ -122,7 +122,7 @@ export const handleNotify = (e, { isQR = false, title, content, srcImg, toastTyp
 // Handle VALIDATOR FORM (Using for Contact)
 // ################## START: VALIDATOR ################## //
 export const validateForm = (e, { errorMsg = 'Please fill out all fields.' }) => {
-    e.preventDefault();
+    e?.preventDefault();
 
     const name = document.querySelector('input[name="name"]');
     const email = document.querySelector('input[name="email"]');
@@ -147,7 +147,7 @@ export const validateForm = (e, { errorMsg = 'Please fill out all fields.' }) =>
 // ################## END: VALIDATOR ################## //
 
 // ################## START: HANDLE SEND MAIL ################## //
-export const handleSendEmail = (e, { formValue, isAutoSending = true }) => {
+export const handleSendEmail = (e, { formValue, isAutoSending = false }) => {
     const templateId = isAutoSending ? 'template_q24uo6j' : 'template_3mjztpt';
     const resetForm = !isAutoSending;
 
@@ -156,21 +156,25 @@ export const handleSendEmail = (e, { formValue, isAutoSending = true }) => {
         .then(
             (result) => {
                 console.log(result.text);
-                // show success message
-                handleNotify(e, {
-                    title: 'Thành công',
-                    content: 'Đã gửi tin nhắn thành công!',
-                    toastType: 'success',
-                });
+                if (resetForm) {
+                    // show success message
+                    handleNotify(e, {
+                        title: 'Thành công',
+                        content: 'Đã gửi tin nhắn thành công!',
+                        toastType: 'success',
+                    });
+                }
             },
             (error) => {
                 console.log(error.text);
-                // show error message
-                handleNotify(e, {
-                    title: 'Lỗi',
-                    content: error.text,
-                    toastType: 'error',
-                });
+                if (resetForm) {
+                    // show error message
+                    handleNotify(e, {
+                        title: 'Lỗi',
+                        content: error.text,
+                        toastType: 'error',
+                    });
+                }
             },
         )
         .finally(() => {
