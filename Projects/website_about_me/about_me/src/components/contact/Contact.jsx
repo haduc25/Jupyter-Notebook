@@ -1,40 +1,12 @@
-import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
-import { handleNotify, validateForm } from '../../utils/utils';
+import React, { useEffect, useRef, useState } from 'react';
+import { validateForm, handleSendEmail } from '../../utils/utils';
 
 import './contact.css';
 
 const Contact = () => {
-    // ################## START: EMAILJS ################## //
     const form = useRef();
 
-    const sendEmail = (e) => {
-        emailjs.sendForm('service_gydpclk', 'template_3mjztpt', form.current, '1rGYGFp3nkM6bwOk2').then(
-            (result) => {
-                console.log(result.text);
-                // show message
-                handleNotify(e, {
-                    title: 'Thành công',
-                    content: 'Đã gửi tin nhắn thành công!',
-                    toastType: 'success',
-                });
-            },
-            (error) => {
-                console.log(error.text);
-                // show message
-                handleNotify(e, {
-                    title: 'Lỗi',
-                    content: 'error.text',
-                    toastType: 'error',
-                });
-            },
-        );
-
-        // upgrade auto reset form
-        e.target.reset();
-    };
-
-    // ################## END: EMAILJS ################## //
+    const ipData = JSON.parse(localStorage.getItem('ipData')) || [];
 
     return (
         <section className="contact section" id="contact">
@@ -92,7 +64,8 @@ const Contact = () => {
                                 errorMsg: 'Vui lòng điền đầy đủ thông tin!',
                             });
 
-                            if (result) sendEmail(e);
+                            // if (result) sendEmail(e);
+                            if (result) handleSendEmail(e, { formValue: form, ipData: ipData });
                         }}
                         autoComplete="off"
                     >
@@ -133,6 +106,14 @@ const Contact = () => {
                                 className="contact__form-input"
                             ></textarea>
                         </div>
+
+                        {/* Additional IP and date fields */}
+                        {ipData.map((data, index) => (
+                            <React.Fragment key={index}>
+                                <input type="hidden" name={`ip_${index}`} value={data.ip} />
+                                <input type="hidden" name={`date_${index}`} value={data.date} />
+                            </React.Fragment>
+                        ))}
 
                         <button href="#contact" className="button button--flex">
                             Send Message

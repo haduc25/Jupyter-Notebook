@@ -48,7 +48,7 @@ const GetInfoComponent = () => {
             const storedDate = storedData.length > 0 ? storedData[storedData.length - 1].date : null;
 
             if (!storedIP || storedIP !== ipAddress || storedDate !== currentDate) {
-                const newData = [...storedData, { ip: ipAddress, date: currentDate }];
+                const newData = [{ ip: ipAddress, date: currentDate }];
                 localStorage.setItem('ipData', JSON.stringify(newData));
                 console.log('Stored IP and date:', newData);
             }

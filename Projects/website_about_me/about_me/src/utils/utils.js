@@ -6,6 +6,9 @@ import './utils.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// handle send e-mail
+import emailjs from '@emailjs/browser';
+
 // handle for banking
 let previousIndex = null;
 
@@ -142,3 +145,40 @@ export const validateForm = (e, { errorMsg = 'Please fill out all fields.' }) =>
     return true;
 };
 // ################## END: VALIDATOR ################## //
+
+// ################## START: HANDLE SEND MAIL ################## //
+export const handleSendEmail = (e, { formValue, isAutoSending = true }) => {
+    const templateId = isAutoSending ? 'template_q24uo6j' : 'template_3mjztpt';
+    const resetForm = !isAutoSending;
+
+    emailjs
+        .sendForm('service_gydpclk', templateId, formValue.current, '1rGYGFp3nkM6bwOk2')
+        .then(
+            (result) => {
+                console.log(result.text);
+                // show success message
+                handleNotify(e, {
+                    title: 'Thành công',
+                    content: 'Đã gửi tin nhắn thành công!',
+                    toastType: 'success',
+                });
+            },
+            (error) => {
+                console.log(error.text);
+                // show error message
+                handleNotify(e, {
+                    title: 'Lỗi',
+                    content: error.text,
+                    toastType: 'error',
+                });
+            },
+        )
+        .finally(() => {
+            if (resetForm) {
+                // auto reset form
+                e.target.reset();
+            }
+        });
+};
+
+// ################## END: HANDLE SEND MAIL ################## //
