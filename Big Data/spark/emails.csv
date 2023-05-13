@@ -1,0 +1,5 @@
+subject,sender,email_text,word_count,avg_word_length,has_attachment,spam
+"Special Offer", "marketing@example.com", "Get 50% off on selected items! Limited time offer.", 10, 4.5, 0, 1
+"Important Announcement", "ceo@example.com", "All employees are required to attend the company meeting on Friday.", 15, 5.2, 0, 0
+"Claim Your Prize", "winner@example.com", "Congratulations! You have won a free vacation package.", 8, 4.7, 1, 1
+"Meeting Reminder", "manager@example.com", "Reminder: Team meeting tomorrow at 10 AM in the conference room.", 12, 4.9, 0, 0
