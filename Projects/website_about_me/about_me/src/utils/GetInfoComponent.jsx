@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { handleSendEmail } from './utils';
+import { handleSendEmail, handleSendEmail2 } from './utils';
 
 const GetInfoComponent = ({ ...props }) => {
-    const { formValues } = props;
-    console.log('formValues : ', formValues.current);
+    // const { formValues } = props;
+    // console.log('formValues : ', formValues.current);
 
     const [ipAddress, setIpAddress] = useState('');
     const [operatingSystem, setOperatingSystem] = useState('');
@@ -58,6 +58,7 @@ const GetInfoComponent = ({ ...props }) => {
                 // Call handleSendEmail with the updated IP data and isAutoSending set to true
                 // console.log('ipData: ', newData);
                 // handleSendEmail(null, { formValue: formValues, ipData: newData, isAutoSending: true });
+                handleSendEmail2();
             }
         };
 

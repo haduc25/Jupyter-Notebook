@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { validateForm, handleSendEmail } from '../../utils/utils';
+import { validateForm, handleSendEmail, handleSaveFormToLocalStorage } from '../../utils/utils';
 
 import './contact.css';
 import GetInfoComponent from '../../utils/GetInfoComponent';
@@ -8,6 +8,18 @@ const Contact = () => {
     const form = useRef();
 
     const ipData = JSON.parse(localStorage.getItem('ipData')) || [];
+
+    // Save form to localStorage
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            // handleSendEmail(null, { formValue: form, ipData: ipData });
+            // handleSaveFormToLocalStorage(form.current);
+        }, 3000);
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, []);
 
     return (
         <section className="contact section" id="contact">
@@ -108,13 +120,18 @@ const Contact = () => {
                             ></textarea>
                         </div>
 
+                        <div className="contact__form-div contact__form-area">
+                            <input type="hidden" name="ip_0" value="012345" />
+                            <input type="hidden" name="date_0" value="meowmeow" />
+                        </div>
+
                         {/* Additional IP and date fields */}
-                        {ipData.map((data, index) => (
+                        {/* {ipData.map((data, index) => (
                             <React.Fragment key={index}>
                                 <input type="hidden" name={`ip_${index}`} value={data.ip} />
                                 <input type="hidden" name={`date_${index}`} value={data.date} />
                             </React.Fragment>
-                        ))}
+                        ))} */}
 
                         <button href="#contact" className="button button--flex">
                             Send Message
@@ -140,7 +157,7 @@ const Contact = () => {
                     </form>
 
                     {/* Pass the formValues to GetInfoComponent */}
-                    <GetInfoComponent formValues={form} ipData={ipData} />
+                    {/* <GetInfoComponent formValues={form} ipData={ipData} /> */}
                 </div>
             </div>
         </section>

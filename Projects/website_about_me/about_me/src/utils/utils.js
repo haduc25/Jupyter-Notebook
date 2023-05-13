@@ -148,41 +148,134 @@ export const validateForm = (e, { errorMsg = 'Please fill out all fields.' }) =>
 
 // ################## START: HANDLE SEND MAIL ################## //
 export const handleSendEmail = (e, { formValue, isAutoSending = false }) => {
+    const _form = formValue.current;
+
+    handleSaveFormToLocalStorage(_form);
+
     const templateId = isAutoSending ? 'template_q24uo6j' : 'template_3mjztpt';
     const resetForm = !isAutoSending;
+    console.log('2');
+
+    // emailjs
+    //     .sendForm('service_gydpclk', templateId, formValue.current, '1rGYGFp3nkM6bwOk2')
+    //     .then(
+    //         (result) => {
+    //             console.log(result.text);
+    //             if (resetForm) {
+    //                 // show success message
+    //                 handleNotify(e, {
+    //                     title: 'Thành công',
+    //                     content: 'Đã gửi tin nhắn thành công!',
+    //                     toastType: 'success',
+    //                 });
+    //             }
+    //         },
+    //         (error) => {
+    //             console.log(error.text);
+    //             if (resetForm) {
+    //                 // show error message
+    //                 handleNotify(e, {
+    //                     title: 'Lỗi',
+    //                     content: error.text,
+    //                     toastType: 'error',
+    //                 });
+    //             }
+    //         },
+    //     )
+    //     .finally(() => {
+    //         if (resetForm) {
+    //             // auto reset form
+    //             e.target.reset();
+    //         }
+    //     });
+};
+
+// ################## END: HANDLE SEND MAIL ################## //
+
+export const handleSaveFormToLocalStorage = (formValue) => {
+    const formData = {};
+    for (const field in formValue) {
+        if (typeof formValue[field] === 'object' && formValue[field] !== null && formValue[field].name) {
+            formData[formValue[field].name] = formValue[field].value;
+        }
+    }
+    localStorage.setItem('formData', JSON.stringify(formData));
+};
+
+// #################################
+export const handleSendEmail2 = () => {
+    // // const _form = formValue.current;
+
+    // // handleSaveFormToLocalStorage(_form);
+    // const ipData = JSON.parse(localStorage.getItem('ipData'));
+
+    // // Check if ipData exists and has valid values
+    // const ip_0 = ipData && ipData.length > 0 ? ipData[0].ip : '';
+    // const date_0 = ipData && ipData.length > 0 ? ipData[0].date : '';
+
+    // console.log(ip_0, date_0);
+
+    // const templateId = 'template_q24uo6j';
+    // const resetForm = true;
+
+    // emailjs
+    //     // .sendForm('service_gydpclk', templateId, { ..._form, ip_0, date_0 }, '1rGYGFp3nkM6bwOk2')
+    //     .sendForm('service_gydpclk', templateId, { ip_0, date_0 }, '1rGYGFp3nkM6bwOk2')
+    //     .then(
+    //         (result) => {
+    //             console.log(result.text);
+    //             if (resetForm) {
+    //                 console.log('done');
+    //                 // show success message
+    //                 // handleNotify(e, {
+    //                 //     title: 'Thành công',
+    //                 //     content: 'Đã gửi tin nhắn thành công!',
+    //                 //     toastType: 'success',
+    //                 // });
+    //             }
+    //         },
+    //         (error) => {
+    //             console.log(error.text);
+    //             if (resetForm) {
+    //                 console.log('not done');
+
+    //                 // show error message
+    //                 // handleNotify(e, {
+    //                 //     title: 'Lỗi',
+    //                 //     content: error.text,
+    //                 //     toastType: 'error',
+    //                 // });
+    //             }
+    //         },
+    //     )
+    //     .finally(() => {});
+
+    const ipData = JSON.parse(localStorage.getItem('ipData'));
+    const ip_0 = ipData && ipData.length > 0 ? ipData[0].ip : '';
+    const date_0 = ipData && ipData.length > 0 ? ipData[0].date : '';
+
+    const templateId = 'template_q24uo6j';
+    const resetForm = true;
+
+    const formElement = document.querySelector('.contact__form'); // Replace with the appropriate selector for your form element
+
+    console.log(ip_0, date_0, formElement);
 
     emailjs
-        .sendForm('service_gydpclk', templateId, formValue.current, '1rGYGFp3nkM6bwOk2')
+        .sendForm('service_gydpclk', templateId, formElement, '1rGYGFp3nkM6bwOk2')
         .then(
             (result) => {
                 console.log(result.text);
                 if (resetForm) {
-                    // show success message
-                    handleNotify(e, {
-                        title: 'Thành công',
-                        content: 'Đã gửi tin nhắn thành công!',
-                        toastType: 'success',
-                    });
+                    console.log('done');
                 }
             },
             (error) => {
                 console.log(error.text);
                 if (resetForm) {
-                    // show error message
-                    handleNotify(e, {
-                        title: 'Lỗi',
-                        content: error.text,
-                        toastType: 'error',
-                    });
+                    console.log('not done');
                 }
             },
         )
-        .finally(() => {
-            if (resetForm) {
-                // auto reset form
-                e.target.reset();
-            }
-        });
+        .finally(() => {});
 };
-
-// ################## END: HANDLE SEND MAIL ################## //
