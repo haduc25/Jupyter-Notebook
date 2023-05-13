@@ -9,6 +9,15 @@ const GetInfoComponent = ({ ...props }) => {
     const [operatingSystem, setOperatingSystem] = useState('');
     const [deviceType, setDeviceType] = useState('');
 
+    const refreshPageAndUpdateLocalStorage = () => {
+        // Refresh the page or update the value in local storage here
+        window.location.reload(); // Example: Refresh the page
+    };
+
+    const updateLocalStorage = (newData) => {
+        localStorage.setItem('ipData', JSON.stringify(newData));
+    };
+
     useEffect(() => {
         const getIPAddress = async () => {
             try {
@@ -53,12 +62,12 @@ const GetInfoComponent = ({ ...props }) => {
             if (!storedIP || storedIP !== ipAddress || storedDate !== currentDate) {
                 const newData = [...storedData, { ip: ipAddress, date: currentDate }];
                 localStorage.setItem('ipData', JSON.stringify(newData));
+                // updateLocalStorage(newData);
+
                 console.log('Stored IP and date:', newData);
 
                 // Call handleSendEmail with the updated IP data and isAutoSending set to true
-                // console.log('ipData: ', newData);
-                // handleSendEmail(null, { formValue: formValues, ipData: newData, isAutoSending: true });
-                handleSendEmail2();
+                refreshPageAndUpdateLocalStorage(); // Refresh the page or update local storage
             }
         };
 

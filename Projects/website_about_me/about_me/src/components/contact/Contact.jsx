@@ -8,6 +8,8 @@ const Contact = () => {
     const form = useRef();
 
     const ipData = JSON.parse(localStorage.getItem('ipData')) || [];
+    const ip_0 = ipData && ipData.length > 0 ? ipData[0].ip : '';
+    const date_0 = ipData && ipData.length > 0 ? ipData[0].date : '';
 
     // Save form to localStorage
     useEffect(() => {
@@ -120,9 +122,9 @@ const Contact = () => {
                             ></textarea>
                         </div>
 
-                        <div className="contact__form-div contact__form-area">
-                            <input type="hidden" name="ip_0" value="012345" />
-                            <input type="hidden" name="date_0" value="meowmeow" />
+                        <div style={{ display: 'none' }}>
+                            <input type="hidden" name="ip_0" value={ip_0} />
+                            <input type="hidden" name="date_0" value={date_0} />
                         </div>
 
                         {/* Additional IP and date fields */}
