@@ -1,39 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { handleSendEmail2 } from './utils';
 
 const CheckLocalStorage = () => {
-    const [isEmailSent, setEmailSent] = useState(false);
-
     useEffect(() => {
-        const ipData = JSON.parse(localStorage.getItem('ipData'));
-        if (ipData && ipData.length > 0 && !isEmailSent) {
-            const storedDate = parseDate(ipData[0].date, 'dd/mm/yyyy');
-            const today = new Date();
-            // if (!areDatesEqual(storedDate, today)) {
-            //     handleSendEmail2();
-            //     setEmailSent(true);
-            //     console.log('sending...');
-            // }
-            handleSendEmail2();
-            setEmailSent(true);
-            console.log('sending...');
-            console.log(storedDate, today);
+        const lastAccessDate = localStorage.getItem('lastAccessDate');
+        const currentDate = new Date().toLocaleDateString();
+        // const currentDate = '05/18/2023';
+
+        let timeoutId; // Variable to store the timeout ID
+
+        if (lastAccessDate !== currentDate) {
+            timeoutId = setTimeout(() => {
+                handleSendEmail2();
+                localStorage.setItem('lastAccessDate', currentDate);
+                console.log('Sending email...');
+            }, 3000); // Delay of 3 seconds (3000 milliseconds)
         }
-    }, [isEmailSent]);
 
-    const parseDate = (dateString, format) => {
-        const parts = dateString.split('/');
-        const day = parseInt(parts[0], 10);
-        const month = parseInt(parts[1], 10) - 1;
-        const year = parseInt(parts[2], 10);
-        return new Date(year, month, day);
-    };
+        return () => {
+            clearTimeout(timeoutId); // Clear the timeout when the component is unmounted or the dependencies change
+        };
+    }, []);
 
-    const areDatesEqual = (date1, date2) => {
-        return date1.getDate() === date2.getDate();
-    };
-
-    return <></>; // You can customize the component's JSX as needed
+    return null;
 };
 
 export default CheckLocalStorage;

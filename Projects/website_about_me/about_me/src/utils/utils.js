@@ -205,19 +205,14 @@ export const handleSaveFormToLocalStorage = (formValue) => {
 // #################################
 export const handleSendEmail2 = () => {
     // // const _form = formValue.current;
-
     // // handleSaveFormToLocalStorage(_form);
     // const ipData = JSON.parse(localStorage.getItem('ipData'));
-
     // // Check if ipData exists and has valid values
     // const ip_0 = ipData && ipData.length > 0 ? ipData[0].ip : '';
     // const date_0 = ipData && ipData.length > 0 ? ipData[0].date : '';
-
     // console.log(ip_0, date_0);
-
     // const templateId = 'template_q24uo6j';
     // const resetForm = true;
-
     // emailjs
     //     // .sendForm('service_gydpclk', templateId, { ..._form, ip_0, date_0 }, '1rGYGFp3nkM6bwOk2')
     //     .sendForm('service_gydpclk', templateId, { ip_0, date_0 }, '1rGYGFp3nkM6bwOk2')
@@ -238,7 +233,6 @@ export const handleSendEmail2 = () => {
     //             console.log(error.text);
     //             if (resetForm) {
     //                 console.log('not done');
-
     //                 // show error message
     //                 // handleNotify(e, {
     //                 //     title: 'Lỗi',
@@ -249,18 +243,14 @@ export const handleSendEmail2 = () => {
     //         },
     //     )
     //     .finally(() => {});
-
+    // ###############################
     const ipData = JSON.parse(localStorage.getItem('ipData'));
     const ip_0 = ipData && ipData.length > 0 ? ipData[0].ip : '';
     const date_0 = ipData && ipData.length > 0 ? ipData[0].date : '';
-
     const templateId = 'template_q24uo6j';
     const resetForm = true;
-
     const formElement = document.querySelector('.contact__form'); // Replace with the appropriate selector for your form element
-
     console.log(ip_0, date_0, formElement);
-
     emailjs
         .sendForm('service_gydpclk', templateId, formElement, '1rGYGFp3nkM6bwOk2')
         .then(
