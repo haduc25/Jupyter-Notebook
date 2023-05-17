@@ -5,7 +5,7 @@
 // other version - meme
 import Image1 from '../../assets/testimonial1_tho7mau.png';
 import Image2 from '../../assets/testimonial2_meow.png';
-import Image3 from '../../assets/testimonial3_boman.png';
+import Image3 from '../../assets/testimonial2_shiba.png';
 import Image4 from '../../assets/testimonial4_bingchilling.png';
 
 export const Data = [
@@ -18,13 +18,13 @@ export const Data = [
     {
         id: 2,
         image: Image2,
-        title: 'Cat',
+        title: 'Mồn lèo',
         description: 'Meow meow meow...',
     },
     {
         id: 3,
         image: Image3,
-        title: 'Bomman',
+        title: 'Shiba',
         description: '...',
     },
     {

@@ -24,12 +24,23 @@ function getRandomBankingData() {
     return bankingData[randomIndex];
 }
 
+// Promise
+// Create a promise wrapper for toast
+const toastPromise = (promise) => {
+    return new Promise((resolve, reject) => {
+        promise.then(resolve).catch(reject);
+    });
+};
+
 // handle when call the notify
-export const handleNotify = (e, { isQR = false, title, content, srcImg, toastType = 'none', ...props }) => {
+export const handleNotify = async (
+    e,
+    { isQR = false, title, content, srcImg, toastType = 'none', isPromise = false, ...props },
+) => {
     // bcs dont have pages preview so i'll show them the message (toast message)
 
-    // first remove preventDefault() of a card
-    e?.preventDefault();
+    // // first remove preventDefault() of a card
+    // e?.preventDefault();
 
     // handle for dark theme & light theme
     // const isDarkTheme = getComputedStyle(document.body).getPropertyValue('--body-color') === '#202124';
@@ -103,18 +114,55 @@ export const handleNotify = (e, { isQR = false, title, content, srcImg, toastTyp
         ...props,
     };
 
-    // handle for toast types
-    switch (toastType) {
-        case 'info':
-        case 'success':
-        case 'warning':
-        case 'error':
-            toast[toastType](message, options);
-            break;
+    if (isPromise) {
+        // Create a promise for the toast message
+        const resolveTimes = new Promise((resolve) => setTimeout(resolve, 3000));
 
-        default:
-            toast(message2, options);
+        toast
+            .promise(resolveTimes, {
+                pending: props.peddingMsg,
+                success: props.successMsg,
+                error: props.errorMsg,
+                ...options,
+            })
+            .then(() => {
+                if (e) {
+                    // console.log('event here');
+                }
+                // Handle success
+                console.log('Promise resolved');
+            })
+            .catch(() => {
+                // Handle error
+                console.log('Promise rejected');
+            });
+    } else {
+        // first remove preventDefault() of a card
+        e?.preventDefault();
+
+        switch (toastType) {
+            case 'info':
+            case 'success':
+            case 'warning':
+            case 'error':
+                toast[toastType](message, options);
+                break;
+            default:
+                toast(message2, options);
+        }
     }
+    // // handle for toast types
+    // switch (toastType) {
+    //     case 'info':
+    //     case 'success':
+    //     case 'warning':
+    //     case 'error':
+    //         toast[toastType](message, options);
+    //         break;
+
+    //     default:
+    //         toast(message2, options);
+    // }
 
     return <ToastContainer className="utils_container" />;
 };
@@ -256,3 +304,5 @@ export const handleSendEmail2 = () => {
         )
         .finally(() => {});
 };
+
+//

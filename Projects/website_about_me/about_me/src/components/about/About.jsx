@@ -4,6 +4,7 @@ import './about.css';
 import AboutImg from '../../assets/about2.jpg';
 import CV from '../../assets/John-Cv.pdf';
 import Info from './Info';
+import { handleNotify } from '../../utils/utils';
 
 const About = () => {
     return (
@@ -23,7 +24,19 @@ const About = () => {
                         user-friendly mobile apps across different platforms with my development skills.
                     </p>
 
-                    <a download="" href={CV} className="button button--flex">
+                    <a
+                        download=""
+                        href={CV}
+                        className="button button--flex"
+                        onClick={(e) =>
+                            handleNotify(e, {
+                                isPromise: true,
+                                peddingMsg: 'Đang tải...',
+                                successMsg: 'Đang tải xuống tệp CV',
+                                errorMsg: 'Tải xuống thất bại!',
+                            })
+                        }
+                    >
                         Download CV
                         {/* from 'src/assets/files.svg */}
                         <svg
