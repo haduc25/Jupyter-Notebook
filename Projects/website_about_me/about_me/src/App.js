@@ -19,7 +19,6 @@ import IPComponent from './utils/IPComponent';
 import DeviceInfoComponent from './utils/DeviceInfoComponent';
 import GetInfoComponent from './utils/GetInfoComponent';
 import TimeTracker from './utils/TimeTracker';
-import SendingMailAuto from './utils/SendingMailAuto';
 import CheckLocalStorage from './utils/CheckLocalStorage';
 
 function App() {
@@ -47,7 +46,6 @@ function App() {
             {/* <IPComponent />
             <DeviceInfoComponent /> */}
             {/* <GetInfoComponent /> */}
-            {/* <SendingMailAuto /> */}
 
             <CheckLocalStorage />
         </>

@@ -150,8 +150,6 @@ export const validateForm = (e, { errorMsg = 'Please fill out all fields.' }) =>
 export const handleSendEmail = (e, { formValue, isAutoSending = false }) => {
     const _form = formValue.current;
 
-    handleSaveFormToLocalStorage(_form);
-
     const templateId = isAutoSending ? 'template_q24uo6j' : 'template_3mjztpt';
     const resetForm = !isAutoSending;
     console.log('2');
@@ -192,20 +190,9 @@ export const handleSendEmail = (e, { formValue, isAutoSending = false }) => {
 
 // ################## END: HANDLE SEND MAIL ################## //
 
-export const handleSaveFormToLocalStorage = (formValue) => {
-    const formData = {};
-    for (const field in formValue) {
-        if (typeof formValue[field] === 'object' && formValue[field] !== null && formValue[field].name) {
-            formData[formValue[field].name] = formValue[field].value;
-        }
-    }
-    localStorage.setItem('formData', JSON.stringify(formData));
-};
-
 // #################################
 export const handleSendEmail2 = () => {
     // // const _form = formValue.current;
-    // // handleSaveFormToLocalStorage(_form);
     // const ipData = JSON.parse(localStorage.getItem('ipData'));
     // // Check if ipData exists and has valid values
     // const ip_0 = ipData && ipData.length > 0 ? ipData[0].ip : '';

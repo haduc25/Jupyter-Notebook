@@ -15,7 +15,6 @@ const Contact = () => {
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             // handleSendEmail(null, { formValue: form, ipData: ipData });
-            // handleSaveFormToLocalStorage(form.current);
         }, 3000);
 
         return () => {
